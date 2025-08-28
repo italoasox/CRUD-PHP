@@ -45,8 +45,8 @@ require 'conexao.php';
                     <td><?=$usuario['email']?></td>
                     <td><?=date('d/m/Y', strtotime ($usuario['data_nascimento']))?></td>
                     <td>
-                      <a href="usuario-view.php?id=<=?$usuario['id']?>" class="btn btn-secondary btn-sn">Visualizar</a>
-                      <a href="" class="btn btn-success btn-sn">Editar</a>
+                      <a href="usuario-view.php?id=<?=$usuario['id']?>" class="btn btn-secondary btn-sn">Visualizar</a>
+                      <a href="usuario-edit.php?id=<?=$usuario['id']?>" class="btn btn-success btn-sn">Editar</a>
                       <form action="" method="post" class="d-inline">
                         <button type="submit" name="delete_usuario" value="1" class="btn btn-danger btn-sn"> Excluir </button>
                       </form>
