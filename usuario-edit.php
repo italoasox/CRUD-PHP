@@ -2,7 +2,6 @@
 session_start();
 require 'conexao.php';
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,14 +23,14 @@ require 'conexao.php';
                     </div>
                     <div class="card-body">
                         <?php
-                        if (isset($_GET['ID'])) {
-                            $usuario_id =mysqli_real_escape_string($conexao, $_GET['id']);
+                        if (isset($_GET['id'])) {
+                            $usuario_id = mysqli_real_escape_string($conexao, $_GET['id']);
                             $sql = "SELECT * FROM usuarios WHERE id='$usuario_id'";
-                            $query = mysqli_query($conexao, $sql);
+                            $query = mysqli_query($conexao,$sql);
 
-                        if (mysqli_num_rows($query) > 0) {
-                            $usuario = mysqli_fetch_array($query);
-                        
+                            if (mysqli_num_rows($query) > 0) {
+                                $usuario = mysqli_fetch_array($query);
+                            
                         ?>
                         <form action="acoes.php" method="POST">
                             <div class="mb-3">
@@ -44,7 +43,7 @@ require 'conexao.php';
                             </div>
                             <div class="mb-3">
                                 <label>Data de Nascimento</label>
-                                <input type="date" name="data_nascimento" value="<?=$usuario['data_nascimento']?>" class="form-control">
+                                <input type="date" name="data_nascimento" value="<?=$usuario['data_nascimento']?>"  class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label>Senha</label>
@@ -56,12 +55,12 @@ require 'conexao.php';
 
                         </form>
                         <?php
-                        } else{
+                        } else {
                             echo "<h5>Usuário não encontrado</h5>";
                         }
-                    }
 
-                    ?>
+                      }
+                        ?>
                     </div>
                 </div>
             </div>
