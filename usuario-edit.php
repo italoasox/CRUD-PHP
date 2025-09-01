@@ -33,6 +33,7 @@ require 'conexao.php';
                             
                         ?>
                         <form action="acoes.php" method="POST">
+                            <input type="hidden" name="usuario_id" value="<?=$usuario ['id']?>">
                             <div class="mb-3">
                                 <label>Nome</label>
                                 <input type="text" name="nome" value="<?=$usuario['nome']?>" class="form-control">
@@ -50,7 +51,7 @@ require 'conexao.php';
                                 <input type="password" name="senha" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="create_usuario" class="btn btn-primary"> Enviar</button>
+                                <button type="submit" name="update_usuario" class="btn btn-primary"> Enviar</button>
                             </div>
 
                         </form>
