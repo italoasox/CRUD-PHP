@@ -47,8 +47,8 @@ require 'conexao.php';
                     <td>
                       <a href="usuario-view.php?id=<?=$usuario['id']?>" class="btn btn-secondary btn-sn">Visualizar</a>
                       <a href="usuario-edit.php?id=<?=$usuario['id']?>" class="btn btn-success btn-sn">Editar</a>
-                      <form action="" method="post" class="d-inline">
-                        <button type="submit" name="delete_usuario" value="1" class="btn btn-danger btn-sn"> Excluir </button>
+                      <form action="acoes.php" method="post" class="d-inline">
+                        <button onclick ="return confirm('Tem certeza?')" type="submit" name="delete_usuario" value="<?=$usuario['id']?>" class="btn btn-danger btn-sn"> Excluir </button>
                       </form>
                     </td>
                   </tr>
